@@ -1,25 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import EventList from "./Components/EventList";
+import { AuthProvider } from "./Components/AuthContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthProvider>
+      <div>
+        <h1 className="m-4 flex justify-center text-5xl">Events</h1>
+        <EventList />;
+      </div>
+    </AuthProvider>
   );
 }
 
